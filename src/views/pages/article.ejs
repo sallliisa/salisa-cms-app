@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs', {page: "article"}); %>
+  </head>
+  <body>
+    <div>
+      <a class="nav" href="javascript:history.go(-1)">Back</a>
+    </div>
+    <div class="article-content">
+      <div class="head">
+        <h1 class="title"><%= article.title %></h1>
+        <p class="date"><%= article.date %></p>
+      </div>
+
+      <div class="content">
+        <div><%= article.content %></div>
+      </div>
+    </div>
+  </body>
+</html>

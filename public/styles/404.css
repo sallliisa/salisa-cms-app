@@ -1,0 +1,17 @@
+@import url(/static/styles/global.css);
+
+.not-found {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.not-found h1 {
+  font-size: 6rem;
+  margin-bottom: 0px;
+  font-family: TiemposHeadline-Regular;
+}
+
+.not-found nav {
+  margin-top: 0px;
+}

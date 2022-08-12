@@ -1,0 +1,20 @@
+@font-face {
+  font-family: TiemposHeadline-Regular;
+  src: url(/static/fonts/TiemposHeadline-Regular.otf);
+}
+
+@font-face {
+  font-family: TiemposHeadline-Light;
+  src: url(/static/fonts/TiemposHeadline-Light.otf);
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: min(2rem, 80px);
+  font-family: TiemposHeadline-Light;
+}
+
+.nav {
+  color: white;
+}
