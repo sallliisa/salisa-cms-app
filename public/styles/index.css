@@ -1,7 +1,7 @@
 @import url(/static/styles/global.css);
 
 .article-listing {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 .article-listing .link {

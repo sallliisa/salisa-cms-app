@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><%- include('../partials/head.ejs'); %></head>
-<body>
-    <form action="/newarticle" method="post">
-        <input type="text" name="title" placeholder="Title">
-        <input type="text" name="date" placeholder="Date">
-        <textarea name="content" placeholder="Content"></textarea>
-        <input type="submit" value="Submit">
-</body>
+  <head>
+    <%- include('../partials/head.ejs', {page: "newarticle"}); %>
+  </head>
+  <body>
+    <div>
+      <a class="nav" href="javascript:history.go(-1)">Back</a>
+    </div>
+    <div class="main-container">
+      <form action="/newarticle" method="post">
+        <div class="newarticle-form">
+          <textarea
+            id="title-form"
+            class="title-form"
+            type="text"
+            name="title"
+            placeholder="Title"
+            rows="1"
+            oninput="autoGrow(this);"
+          ></textarea>
+          <input
+            class="date-form"
+            type="text"
+            name="date"
+            placeholder="x:xx AM, Month xxth, Year"
+          />
+          <textarea
+            class="text-form"
+            name="content"
+            placeholder="Text"
+          ></textarea>
+          <input class="submit-form" type="submit" value="Post" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function autoGrow(element) {
+        element.style.height = "0px";
+        element.style.height = element.scrollHeight - 16 + "px";
+      }
+    </script>
+  </body>
 </html>

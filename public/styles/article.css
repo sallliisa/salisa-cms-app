@@ -1,22 +1,23 @@
 @import url(/static/styles/global.css);
 
-.article-content .head {
-  margin: 0.5rem 0rem 2rem 0rem;
+.head {
+  margin-top: 8px;
 }
 
-.article-content .head .title {
+.head .title {
   font-family: TiemposHeadline-Regular;
   font-weight: 400;
   font-size: 2.5em;
   margin-bottom: 0px;
 }
 
-.article-content .head .date {
+.head .date {
   font-weight: 300;
   margin: 0px;
 }
 
-.article-content .content {
+.content {
   width: min(80%, 700px);
+  margin-top: 32px;
   font-weight: 300;
 }

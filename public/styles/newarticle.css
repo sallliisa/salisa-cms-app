@@ -1,0 +1,58 @@
+@import url(/static/styles/global.css);
+
+.newarticle-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  width: min(80%, 700px);
+}
+
+.newarticle-form .title-form {
+  font-family: inherit;
+  font-size: 2.5em;
+  font-weight: 400;
+  width: min(80%, 700px);
+  border: 0px;
+  background: black;
+  padding: 8px;
+  resize: none;
+  overflow: hidden;
+}
+
+.newarticle-form .date-form {
+  font-family: inherit;
+  font-size: 16px;
+  border: 0px;
+  background: black;
+  padding: 8px;
+  resize: none;
+  overflow: hidden;
+}
+
+.newarticle-form .text-form {
+  font-family: inherit;
+  font-size: 16px;
+  margin-top: 32px;
+  width: min(80%, 700px);
+  min-width: 200px;
+  height: 200px;
+  border: 0px;
+  background: black;
+  padding: 8px;
+  resize: none;
+  overflow: hidden;
+}
+
+.newarticle-form .submit-form {
+  font-family: inherit;
+  font-size: 16px;
+  margin-top: 32px;
+  border: 1px solid #1a1a1a;
+  background: black;
+  padding: 8px;
+}
+
+.newarticle-form .submit-form:hover {
+  background: #1a1a1a;
+}

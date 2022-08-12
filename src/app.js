@@ -35,8 +35,12 @@ app.get("/newarticle", async (req, res) => {
 });
 
 app.post("/newarticle", async (req, res) => {
-  console.log(req.body);
-  res.sendStatus(200);
+  await services.newArticle(req.body);
+  res.send("Article posted");
+});
+
+app.use((req, res, next) => {
+  res.status(404).render("pages/404.ejs");
 });
 
 app.listen(config.server.port, config.server.address, () => {
