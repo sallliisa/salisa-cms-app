@@ -1,24 +1,26 @@
-@font-face {
-  font-family: TiemposHeadline-Regular;
-  src: url(/static/fonts/TiemposHeadline-Regular.otf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap");
 
-@font-face {
-  font-family: TiemposHeadline-Light;
-  src: url(/static/fonts/TiemposHeadline-Light.otf);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   background-color: black;
   color: white;
   margin: min(2rem, 80px);
-  font-family: TiemposHeadline-Light;
+  font-family: "Source Serif 4", serif;
 }
 
 .nav {
   color: white;
-}
-
-.main-container {
-  margin-top: 16px;
+  margin: 0;
 }

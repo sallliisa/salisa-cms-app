@@ -4,17 +4,19 @@
     <%- include('../partials/head.ejs', {page: "index"}); %>
   </head>
   <body>
-    <div class="title">
-      <h1>-</h1>
-    </div>
-    <div class="body">
-      <% articles.forEach(function(title) { %>
-      <div class="article-listing">
-        <a class="link" href="articles/<%= title._id %>"><%= title.title %></a>
-        <p class="date"><%= title.date %></p>
+    <header>
+      <p class="nav">/</p>
+    </header>
+    <main>
+      <div class="article-list-container">
+        <% articles.forEach(function(title) { %>
+        <div class="article-listing">
+          <a href="articles/<%= title._id %>"><%= title.title %></a>
+          <p><%= title.date %></p>
+        </div>
+        <% }); %>
       </div>
-      <% }); %>
-    </div>
+    </main>
   </body>
 </html>
 

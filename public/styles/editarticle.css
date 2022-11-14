@@ -1,4 +1,4 @@
-.newarticle-form {
+.editarticle-form {
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -6,7 +6,7 @@
   width: min(80%, 700px);
 }
 
-.newarticle-form .title-form {
+.editarticle-form .title-form {
   font-family: inherit;
   font-size: 2.5em;
   font-weight: 600;
@@ -16,10 +16,9 @@
   background: black;
   padding: 8px;
   resize: none;
-  overflow: hidden;
 }
 
-.newarticle-form .date-form {
+.editarticle-form .date-form {
   font-family: inherit;
   font-size: 16px;
   color: white;
@@ -30,7 +29,7 @@
   overflow: hidden;
 }
 
-.newarticle-form .text-form {
+.editarticle-form .text-form {
   font-family: inherit;
   font-size: 16px;
   color: white;
@@ -42,10 +41,9 @@
   background: black;
   padding: 8px;
   resize: none;
-  overflow: hidden;
 }
 
-.newarticle-form .submit-form {
+.editarticle-form .submit-form {
   font-family: inherit;
   font-size: 16px;
   color: white;
@@ -55,6 +53,6 @@
   padding: 8px;
 }
 
-.newarticle-form .submit-form:hover {
+.editarticle-form .submit-form:hover {
   background: #1a1a1a;
 }

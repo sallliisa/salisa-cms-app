@@ -1,18 +1,16 @@
-@import url(/static/styles/global.css);
-
-.article-listing {
-  margin-bottom: 32px;
+.article-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.article-listing .link {
+.article-listing > a {
   color: white;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 2.5rem;
-  font-family: TiemposHeadline-Regular;
   text-decoration-thickness: 2px;
 }
 
-.article-listing .date {
-  font-family: TiemposHeadline-Light;
+.article-listing > p {
   margin: 0px;
 }

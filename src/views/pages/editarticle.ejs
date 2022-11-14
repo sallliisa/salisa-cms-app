@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs', {page: "editarticle"}); %>
+  </head>
+  <body>
+    <div>
+      <a class="nav" href="javascript:history.go(-1)">Back</a>
+    </div>
+    <div class="main-container">
+      <form action="/editarticle/<%= article._id %>" method="post">
+        <div class="editarticle-form">
+          <textarea
+            id="title-form"
+            class="title-form"
+            type="text"
+            name="title"
+            placeholder="Title"
+            rows="1"
+            oninput="autoGrow(this);"
+          >
+<%= article.title %></textarea
+          >
+          <input
+            value="<%= article.date %>"
+            class="date-form"
+            type="text"
+            name="date"
+            placeholder="x:xx AM, Month xxth, Year"
+          />
+          <textarea class="text-form" name="content" placeholder="Text">
+<%= article.content %></textarea
+          >
+          <input class="submit-form" type="submit" value="Post" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function autoGrow(element) {
+        element.style.height = "0px";
+        element.style.height = element.scrollHeight - 16 + "px";
+      }
+    </script>
+  </body>
+</html>
