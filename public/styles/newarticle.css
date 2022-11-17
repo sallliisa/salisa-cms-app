@@ -1,60 +1,49 @@
+input,
+textarea {
+  padding: 0px;
+  border: 0px;
+  resize: none;
+  overflow: hidden;
+  color: white;
+  font-family: inherit;
+  background: black;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
 .newarticle-form {
   display: flex;
   flex-direction: column;
-  gap: 0px;
-  align-items: flex-start;
+  gap: 32px;
   width: min(80%, 700px);
 }
 
-.newarticle-form .title-form {
-  font-family: inherit;
+.newarticle-form > .head {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.newarticle-form > .head > .title-form {
   font-size: 2.5em;
   font-weight: 600;
-  color: white;
-  width: min(80%, 700px);
-  border: 0px;
-  background: black;
-  padding: 8px;
-  resize: none;
-  overflow: hidden;
+  height: 54px;
 }
 
-.newarticle-form .date-form {
-  font-family: inherit;
-  font-size: 16px;
-  color: white;
-  border: 0px;
-  background: black;
-  padding: 8px;
-  resize: none;
-  overflow: hidden;
+.newarticle-form > .content > .text-form {
+  height: 22px;
 }
 
-.newarticle-form .text-form {
-  font-family: inherit;
-  font-size: 16px;
-  color: white;
-  margin-top: 32px;
-  width: min(80%, 700px);
-  min-width: 200px;
-  height: 200px;
-  border: 0px;
-  background: black;
-  padding: 8px;
-  resize: none;
-  overflow: hidden;
-}
-
-.newarticle-form .submit-form {
-  font-family: inherit;
-  font-size: 16px;
-  color: white;
-  margin-top: 32px;
+.newarticle-form > .submit-form {
   border: 1px solid #1a1a1a;
-  background: black;
   padding: 8px;
 }
 
-.newarticle-form .submit-form:hover {
+.newarticle-form > .submit-form:hover {
   background: #1a1a1a;
 }

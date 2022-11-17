@@ -1,16 +1,9 @@
 import express from "express";
-import serveIndex from "serve-index";
-import basicAuth from "express-basic-auth";
-import crypto from "crypto-js";
 import Logging from "./library/logger.js";
-import bodyParser from "body-parser";
-import { services } from "./services/webServices.js";
 import { fileURLToPath } from "url";
 import path from "path";
 import { config } from "./config/config.js";
-import { marked } from "marked";
-import DOMPurify from "dompurify";
-import { JSDOM } from "jsdom";
+import { routes } from "./routes/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,56 +15,7 @@ app.use("/static", express.static(path.join(__dirname, "..", "/public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const dompurify = DOMPurify(new JSDOM().window);
-
-app.get("/", async (req, res) => {
-  const articles = await services.getAllArticles();
-  res.render("pages/index.ejs", { articles: articles.reverse() });
-});
-
-app.get("/articles/:articleId", async (req, res) => {
-  const articleId = req.params.articleId;
-  const article = await services.getArticle(articleId);
-  if (!article) {
-    res.redirect("/404");
-  }
-  article.content = dompurify.sanitize(marked(article.content));
-  res.render("pages/article.ejs", { article: article });
-});
-
-app.get("/newarticle", async (req, res) => {
-  res.render("pages/newarticle.ejs");
-});
-
-app.get("/editarticle/:articleId", async (req, res) => {
-  const articleId = req.params.articleId;
-  const article = await services.getArticle(articleId);
-  if (!article) {
-    res.redirect("/404");
-  }
-  res.render("pages/editarticle.ejs", { article: article });
-});
-
-app.get("/deletearticle/:articleId", async (req, res) => {
-  const articleId = req.params.articleId;
-  await services.deleteArticle(articleId);
-  res.redirect("/");
-});
-
-app.post("/newarticle", async (req, res) => {
-  await services.newArticle(req.body);
-  res.send("Article posted");
-});
-
-app.post("/editarticle/:articleId", async (req, res) => {
-  const articleId = req.params.articleId;
-  await services.editArticle(articleId, req.body);
-  res.send("Article edited");
-});
-
-app.get("/404", async (req, res) => {
-  res.status(404).render("pages/404.ejs");
-});
+app.use("/", routes);
 
 app.listen(config.server.port, config.server.address, () => {
   Logging.info(`App started on ${config.server.address}:${config.server.port}`);

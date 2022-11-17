@@ -8,28 +8,33 @@
       <a class="nav" href="javascript:history.go(-1)">Back</a>
     </div>
     <div class="main-container">
-      <form action="/newarticle" method="post">
+      <form action="/article/new" method="post">
         <div class="newarticle-form">
-          <textarea
-            id="title-form"
-            class="title-form"
-            type="text"
-            name="title"
-            placeholder="Title"
-            rows="1"
-            oninput="autoGrow(this);"
-          ></textarea>
-          <input
-            class="date-form"
-            type="text"
-            name="date"
-            placeholder="x:xx AM, Month xxth, Year"
-          />
-          <textarea
-            class="text-form"
-            name="content"
-            placeholder="Text"
-          ></textarea>
+          <div class="head">
+            <textarea
+              id="title-form"
+              class="title-form"
+              type="text"
+              name="title"
+              placeholder="Title"
+              rows="1"
+              oninput="autoGrow(this);"
+            ></textarea>
+            <input
+              class="date-form"
+              type="text"
+              name="date"
+              placeholder="x:xx AM, Month xxth, Year"
+            />
+          </div>
+          <div class="content">
+            <textarea
+              class="text-form"
+              name="content"
+              placeholder="Text"
+              oninput="autoGrow(this);"
+            ></textarea>
+          </div>
           <input class="submit-form" type="submit" value="Post" />
         </div>
       </form>
@@ -38,7 +43,7 @@
     <script>
       function autoGrow(element) {
         element.style.height = "0px";
-        element.style.height = element.scrollHeight - 16 + "px";
+        element.style.height = element.scrollHeight + "px";
       }
     </script>
   </body>

@@ -11,7 +11,7 @@
       <div class="article-list-container">
         <% articles.forEach(function(title) { %>
         <div class="article-listing">
-          <a href="articles/<%= title._id %>"><%= title.title %></a>
+          <a href="article/<%= title._id %>"><%= title.title %></a>
           <p><%= title.date %></p>
         </div>
         <% }); %>

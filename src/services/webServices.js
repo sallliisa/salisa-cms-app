@@ -1,5 +1,8 @@
 import { config } from "../config/config.js";
+import NodeCache from "node-cache";
 import got from "got";
+
+const articleCache = new NodeCache({ stdTTL: config.cache.ttl });
 
 export const services = {
   getAllArticles: async () => {
@@ -9,12 +12,17 @@ export const services = {
     return data.articles;
   },
   getArticle: async (articleId) => {
-    const data = await got
-      .get(
-        `http://${config.api.address}:${config.api.port}/api/article/${articleId}`
-      )
-      .json();
-    return data.article;
+    if (articleCache.has(articleId)) {
+      return articleCache.get(articleId);
+    } else {
+      const data = await got
+        .get(
+          `http://${config.api.address}:${config.api.port}/api/article/${articleId}`
+        )
+        .json();
+      articleCache.set(articleId, data.article);
+      return data.article;
+    }
   },
   newArticle: async (data) => {
     await got.post(
